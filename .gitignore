@@ -1,0 +1,17 @@
+
+*.pdf
+
+*.log
+
+*.aux
+
+*TSW*
+*.synctex
+
+*.idx
+
+*.xml
+
+*.iml
+
+.idea/.name

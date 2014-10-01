@@ -1,0 +1,70 @@
+\begin{prop}
+Let $A=k[x]$ and let $(V,\rho )$ be a finite dimensional irreducible $A$-module. Let $v\in V-0$, then $\varphi _{v}: k[x]\rightarrow V : f \mapsto f.v$ is a surjective $A$-module homomorphism.
+\end{prop}
+
+\begin{proof}
+Let $y\in V$. We need to show there exists a $f\in k[x]$ such that $f.v=y$. If $V$ is 1 dimensional, this is trivially true.
+
+If not, we know that $V$ is irreducible, so if we take a $\mathcal{V}=\text{span}\{v\}$ then there exists an $f$ such that $f.v \not\in  \mathcal{V}$. We can extend $\mathcal{V}$ to the ortogonal complement of $\text{span}\{y\}$ and find that there must be an $f\in k[x]$ that maps to $\text{span}\{y\}$.
+\end{proof}
+
+\begin{prop}
+Let $A=k[x]$ and let $(V,\rho )$ be a finite dimensional irreducible $A$-module. Let $v\in V-0$, and $\varphi _{v}: k[x]\rightarrow V : f \mapsto f.v$. Show that $\mathop{\mathrm{Ker}}(\varphi _{v})\subseteq k[x]$ is a left-ideal.
+\end{prop}
+
+\begin{proof}
+To show we have a left ideal, we need to show that $a\text{Ker}\subseteq \text{Ker}$. So take an element $f\in \text{Ker}$, then $f.v=0$. We need to show that $(af).v=0$ for any $a\in k[x]$. We have 
+$$(af.v)=a.(f.v)=a.0=0.$$
+\end{proof}
+
+\begin{prop}
+Let $A=k[x]$ and let $(V,\rho )$ be a finite dimensional irreducible $A$-module. Let $v\in V-0$, and $\varphi _{v}: k[x]\rightarrow V : f \mapsto f.v$. Show that $\bar{\varphi }: k[x]/(p) \rightarrow V$ is an isomorphism.
+\end{prop}
+
+\begin{proof}
+This follows out of the following three theorems.
+\end{proof}
+
+\begin{thm}
+Let $R$ be a principal ideal domain. And let $I$ an ideal. Then $I=(x)$ for some $x\in R$.
+\end{thm}
+
+\begin{thm}
+$k[x]$ is a principal ideal domain.
+\end{thm}
+
+\begin{thm}
+An $A$-module homomorphism $\varphi :V_{1}\rightarrow V_{2}$ induces an $A$-module isomorphism $\bar{\varphi }:V_{1}/\mathop{\mathrm{Ker}}(\varphi ) \rightarrow  \mathop{\mathrm{Im}}(\varphi )$.
+\end{thm}
+
+
+\begin{prop}
+Assume that $k[x]/(p)$ is an irreducible representation of $k[x]$ show that $(p)\subseteq k[x]$ is a maximal ideal.
+\end{prop}
+
+Let $I\subseteq k[x]$ be an ideal that contains $(p)$. Then $k[x]/I$ is contained in $k[x]/(p)$. But as $I$ is an left-ideal, $k[x]/I$ a representation of the regular representation of $A$. But this isn't possible as $k[x]/(p)$ is irreducible.
+
+\begin{thm}
+If $I$ is a left-ideal in $A$, then $A/I$ is a representation of $A$.
+\end{thm}
+
+\begin{proof}
+Follows from \ref{1} and \ref{2}
+\end{proof}
+
+\begin{thm}
+\label{1}
+If $V$ is a representation of $A$ and $W\subseteq V$ is a subrepresentation, then $V/W$ is also a representation.
+\end{thm}
+
+\begin{thm}
+	\label{2}
+If $I$ is a left ideal of $A$, then $I$ is a subrepresentation of the regular representation of $A$. If $W$ is a subrepresentation of the regular representation, then $W$ is a left ideal.
+\end{thm}
+
+\begin{prop}
+Let $A=k[x]$ and let $(V,\rho )$ be a finite dimensional irreducible $A$-module. Let $v\in V-0$, and $\varphi _{v}: k[x]\rightarrow V : f \mapsto f.v$. Show that $\mathop{\mathrm{ker}}(\rho )=(p)$.
+\end{prop}
+
+Let $a\in \mathop{\mathrm{ker}}(\rho )$ $\Longleftrightarrow $ $\rho (a)=0$ $\Longleftrightarrow $ $a.v=0$ $\Longleftrightarrow $ $a \in  \text{ker}\phi _{v}$.
+

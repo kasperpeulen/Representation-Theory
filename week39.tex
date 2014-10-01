@@ -1,0 +1,37 @@
+\section{Week 39}
+
+\subsection*{Theory}
+
+\subsection*{Homework}
+
+\begin{prop}
+
+Let \(A=k[x]\) and let \(V=k[x]/\big((x-\lambda )^{n} \big)\) for some \(\lambda \in k\) and \(n\in \Bbb{N}\). Consider the basis \(\mathcal{B}:=\{b_{i}:=\overline{(x-\lambda )^{n-i}}\}\) of \(V\). Prove that the element \(x\in k[x]\) acts in \(V\) by the matrix \(M(\rho (x))\) of \(\rho (x)\) which has \(\lambda \) on the diagonal, and \(1\) on the line above the diagonal.
+\end{prop}
+
+\begin{proof}
+
+We need to show that
+\begin{align*}&x.b_{1}=\lambda b_{1} \\
+&x.b_{i}=b_{i-1}+\lambda b_{i}\end{align*}
+Equivalently:
+\begin{align*}&\overline{x(x-\lambda )^{n-1}}=\lambda \overline{(x-\lambda )^{n-1}} \\
+&\overline{x(x-\lambda )^{n-i}}=\overline{(x-\lambda )^{n-i+1}+\lambda (x-\lambda )^{n-i}}\end{align*}
+This follows directly from the fact that.
+
+\[x(x-\lambda )^{k} =(x-\lambda +\lambda )(x-\lambda )^{k} =(x-\lambda )^{k+1} - \lambda (x-\lambda )^{k.}\]
+\end{proof}
+
+\begin{prop}
+Observe that \(M(\rho (x))\) is in Jordan normal form, and has only one Jordan block. Compare with exercise 10(b) of Week 36, and use this to give another proof of the indecomposability of \(V\).
+\end{prop}
+
+\begin{proof}
+Out of exercise 10c, we can  conclude that the minimum polynomial of \(k[x]\) has the form \((x-\lambda )^{n}\) .
+
+And out of exercise 10d, we can conclude that in that situation, \(V\) is indecomposable.
+\end{proof}
+
+\begin{prop}
+Find a filtration \(V=V_{0} \supset  V_{1} \supset \cdots \supset V_{n}=0\) such that the subsequent quotients \(V_{i-1}/V_{i}\) (\(i=1,\ldots ,n\)) are irreducible. Describe the \(A\)-module structure of these irreducible subquotients of \(V\).
+\end{prop}

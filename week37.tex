@@ -1,0 +1,104 @@
+\section{Week 37}
+
+\subsection*{Theory}
+
+\subsection*{Homework}
+
+\begin{thm}
+Let \(A\) be an associative algebra, and let \(V\) be a representation of \(A\). By \(\End_{A} (V)\) one denotes the algebra of all homomorphisms of representations \(V\rightarrow V\). Show that \(\End_{A} (A)= A^{\text{op}}\), the algebra with opposite multiplication.
+\end{thm}
+
+
+\begin{thm}
+Let \(A\) be an associative algebra, and let \(V\) be a representation of \(A\). By \(\End_{A} (V)\) one denotes the algebra of all homomorphisms of representations \(V\rightarrow V\). Show that \(\End_{A} (A)= A^{\text{op}}\), the algebra with opposite multiplication.
+\end{thm}
+
+\begin{proof} To show that \(\End_{A} (A) \cong  A^{\op}\), we have to find an isomorphism of algebras:
+
+\[f :A^{\op} \rightarrow  \End_{A} (A) \]
+
+To make things clear, we denote by \(\cdot \) the multiplication in \(A\). And by \(\underset{\op}{\cdot }\) the multiplication in \(A^{\op}\).
+
+Elements of \(\End_{A} (A)\) are homomorphisms of representations \(\phi : A\rightarrow A\) where \(A\) is the regular representation of the algebra \(A\). We will denote \(\circ \) by multiplication in \(\End_{A} (A)\). We have to construct \(f\) such that the following three hold:
+
+\begin{enumerate}
+\item \(f(a\underset{\op}{\cdot }b)=f(a) \circ f(b)\)
+\item \(f\) must be surjective
+\item \(f\) must be injective
+\end{enumerate}
+
+Showing that  \(f(a\underset{\op}{\cdot }b)=f(a) \circ f(b)\) is equivalent with showing that
+
+\begin{align*}\phi _{b\cdot a} (c) =\phi _{a}\circ \phi _{b}(c) && \forall c \in  A.\end{align*}
+
+It seems logical to define \(f(a)(b):=\phi _{a}(b):=b\cdot a\). As (1) hold then. In other notations define:
+
+\[f :A^{\op} \rightarrow  \End_{A} (A) : a \mapsto \big(\phi _{a} : A \rightarrow  A:b \mapsto b\cdot a\big)\]
+
+Let's check if \(f\), defined this way, is surjective. Let's take an element \(\phi \in  \End_{A} (A)\). We know that \(a\phi (b)=\phi (ab)\), therefore:
+
+\[\phi (b)=\phi (a\cdot 1)=b\phi (1)\]
+
+So if we take \(a=\phi (1)\), then \(f(a)=\phi \).
+
+For injectivity, suppose that \(f(b)=f(c)\). Let \(a\in A\), then \(f(b)(a)=f(c)(a)\), which implies that \(ab=ac\). And this implies that $b=c$.
+\end{proof}
+
+\subsection*{Exercises}
+
+\begin{thm}
+Let \(V\) be a nonzero finite dimensional representation of an algebra \(A\). Show that it has an irreducible subrepresentation.
+\end{thm}
+
+\begin{proof}
+If $V$ is irreducible, then we are done. If it is reducible, then there exists a subrepresentation $W$. As this subrepresentation is a subspace, $\dim(W) < \dim (V)$. If $W$ is irreducible, then we are done, if it is reducible, we continue the process. We are sure that this process will stop once, as all 1-dimensional subrepresentations are irreducible.
+\end{proof}
+
+\begin{thm}
+Show that there exists an infinite dimensional representation that has no irreducible subrepresentation.
+\end{thm}
+
+\begin{proof}
+Note that any $k[X]$ is an infinite dimensional algebra. And if we take the regular representation, then this representation is also infinite. What are the subrepresentations of $k[X]$ ? In this case $\rho(a)$ is just left multiplication so if $\rho(a)W \subset W$ then $W$ is an ideal. And as $k[X]$ is PID, this ideal is of the form $(p)$ for some $p \in k[X]$. The question is now, does this ideal has an subrepresentation ? If we take $f \in (p^2)$, then $f= gp^2= (gp)p$, so $(p^2)\subset (p)$, and is therefore a subrepresentation. 
+\end{proof}
+
+\begin{defn}
+Let \(A\) be an algebra over a field \(k\). The center \(Z(A)\) of \(A\) is the set of all elements \(z\in A\) which commute with all elements of \(A\). Note that if \(A\) is commutative then \(Z(A)=A\).
+\end{defn}
+
+\begin{thm} 
+\begin{enumerate}
+  \item Show that if \(V\) is an irreducible finite dimensional representation of \(A\), then any element \(z\in Z(A)\) acts in \(V\) by multiplication by some scalar \(\chi _{V} (z)\).
+  \item Show that \(\chi _{V} :Z(A)\rightarrow k\) is a homomorphism. It is called the \emph{central character} of \(V\).
+\end{enumerate}
+
+\end{thm}
+
+\begin{proof}
+As $V$ is representation of $A$, there is some action such that $a.v\in V$ for $a \in A$ and $v\in V$. We need to show that if $a \in Z(V)$, then $a.v = k_1 v$ for some $k_1 \in k$ for all $v\in V$. 
+
+So we need to show that there exists a $k_1$ such that $a.v=k_1.v$. 
+Or equivalently, $(a-k_1).v=0$, for all $v \in V$. 
+So we need to show that there exists  a $k_1$ such that $\rho(a)=k_1I$.
+
+In other words, we need to show that $\rho(a)$ is a scalar matrix, for any $a \in Z(A)$. 
+We define $\rho(a)=X$, and we know that $XB=BX$ for every $B=\rho(b)$ where $b\in A$. 
+
+We can use schur's lemma, if $X$ is a interwining operator. Note that:
+
+$X(a.v)=(Xa).v=aX.v$ as $X$ commutes with all elements.
+
+Finally, the part about $\chi$ being a homomorphism comes directly from the definition of representation.  We need to show that if $a,a'\in Z(A)$, then $\chi_V(aa') = \chi_V(a)\chi_V(a')$.
+
+But by definition, $$\chi_V(aa')I = \rho(aa') = \rho(a)\rho(a') = \chi_V(a)I \chi_V(a')I = \chi_V(a)\chi_V(a')I. $$
+
+\end{proof}
+
+\begin{thm}
+\label{3} Show that if \(V\) is an indecomposable finite dimensional representation of \(A\), then for any \(z\in Z(A)\), the operator \(\rho (z)\) by which \(z\) acts in \(V\) has only one eigenvalue \(\chi _{V} (z)\), equal to the scalar by which \(z\) acts on some irreducible subrepresentation of V. Thus \(\chi _{V} :Z(A)\rightarrow k\) is a homomorphism, which again is called the  central character of \(V\).
+\end{thm}
+
+\begin{thm}
+Does \(\rho (z)\) in \ref{3} have to be a scalar operator ?
+\end{thm}
+

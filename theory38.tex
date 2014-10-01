@@ -1,0 +1,34 @@
+\subsection*{Theory}
+
+\begin{defn}
+A \emph{subrepresentation} of a representation \(V\) of an algebra \(A\) is a subspace \(W\subseteq V\) which is invariant under all the operators: 
+\begin{align*}\rho (a):V \rightarrow V && \forall a\in A\end{align*}
+In other notation: \(aW\subseteq W\) for any \(a\in A.\)
+\end{defn}
+
+\begin{defn}\label{irreducible}
+A representation \(V\) of an algebra \(A\) is said to be \emph{irreducible} if \(V\) and \(0\) are the only subrepresentations of \(V\).
+\end{defn}
+
+\begin{defn}\label{5}
+Let $V\neq 0$ be a representation of $A$. We say that a vector $v\in V$ is \emph{cyclic} if it generates $V$. In other words, $Av=V$. 
+
+A representation that contains a cyclic vector is said to be \emph{cyclic}.
+\end{defn}
+
+\begin{thm}\label{4}
+If \(\phi \in \Hom_A(V_{1},V_{2})\) then \(\Ker(\phi )\subseteq V_{1}\) and \(\Imm(\phi )\subseteq V_{2}\) are subrepresentations. If \(\Imm(\phi )=V_{2}\) and \(\Ker(\phi )=0\), then \(\phi \) is an isomorphism of representations. 
+\end{thm}
+
+\begin{thm}\label{isomorphismtheorem}
+An representations homomorphism \(\phi :V_{1}\rightarrow V_{2}\) induces a isomorphism of representations 
+\[\bar{\phi } : V_{1}/\Ker(\phi ) \rightarrow  \Imm(\phi ).\]
+\end{thm}
+
+\begin{thm}\label{ideal_is_sub}
+Left ideals are the same as subrepresentations of the regular representation of \(A\). Right ideals are the same as subrepresentations of the regular representation of the opposite algebra \(A^{\text{op}}\).
+\end{thm}
+
+\begin{thm}\label{V/W_representation}
+If \(V\) is an representation of \(A\) and \(W\subseteq V\) is a subrepresentation, then \(V/W\) is also a representation.
+\end{thm}

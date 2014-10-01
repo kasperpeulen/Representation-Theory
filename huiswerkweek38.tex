@@ -1,0 +1,34 @@
+\begin{thm}
+Let \(V\neq 0\) be a representation of \(A\). Show that \(V\) is irreducible if and only if all nonzero vectors of \(V\) are cyclic.
+\end{thm}
+
+\begin{proof} \((\Longrightarrow)\) Let \(v_{0}\) be a nonzero vector in \(V\). We need to show that \(Av_{0}\supseteq V\). So let \(v\in V\), we need to show that \(\exists a\in A\) so that \(av_{0}=v\).
+
+Consider the map \(\phi  : A \rightarrow V : a \rightarrow a.v_{0}\). If we see \(A\) as the regular representation of \(A\), then this a homomorphism of representations:
+\(\phi (a.b)=\phi (ab)=(ab).v_{0}= a.(b.v_{0})=a.\phi (b)\).
+
+And we know from (?) that the image of a homomorphism of representations is a subrepresentation of the codomain. In our case, the codomain is equal to \(V\), which is irreducible by hypothesis. So the image of \(\phi \) is either \(0\) or \(V\). And as \(1.v_{0}=v_{0}\neq 0\), the image must be \(V\). So surely, there exists an \(a\in A\) such that \(av_{0}=v\).
+
+\((\Longleftarrow )\) We need to show that \(V\) is irreducible. So take a subspace \(W\subset V\). And assume that \(W\neq 0,V\). We need to show that \(\exists a\in A\) and \(v_{0}\in W\) such that \(av_{0}\not\in W\).
+
+By hypothesis, we know that \(v_{0}\) is cyclic. And therefore \(Av_{0}=V\supset W\) which proofs exactly that: \(\exists a\in A : av_{0}\not\in W.\)
+\end{proof}
+
+\begin{thm}
+Let \(V\neq 0\) be a representation of \(A\). Show that \(V\) is cyclic if and only if it is isomorphic to \(A/I\) where \(I\) is a left-ideal in \(A\).
+\end{thm}
+
+\begin{proof}
+
+$(\Longrightarrow )$ Note that we are done if we can show that there exists a left-ideal \(I\) which is the kernel of some surjective homomorphism of representations \(\phi :A\rightarrow V\). But the kernel of homomorphism of representations is always a subrepresentation of the domain, \(A\), and therefore a left-ideal. So we can reduce our problem to showing that there exists a surjective homomorphism \(\phi :A\rightarrow V\).
+
+By hypothesis, we have a cyclic vector \(v_{0}\in V\). Define now
+\[\phi :A\rightarrow V:a\mapsto a.v_{0}.\]
+As \(Av_{0}=V\), we have that \(\phi \) is surjective.
+
+\((\Longleftarrow )\) As \(I\) is a left ideal in \(A\), it is a subrepresenation of the regular representation of \(A\). And as both \(A\) and \(I\) are representations of \(A\), we have that \(A/I\) must be an representation of \(A\). We need to show that this representation is cyclic. Note that action of \(A\) on this representation \(A/I\) is defined as:
+
+\[a.\bar{b}=\overline{ab}.\]
+
+We need to show that  that there exists a \(\overline{a_{0}}\in A/I\) such that \(A/I\subseteq A.\overline{a_{0}}\). So for any \(\bar{b}\in A/I\) there must exist an \(a\in A\) such that \(\bar{b}=\overline{aa_{0}}\). Well simply take \(a_{0}=1\), and take \(a=b\).
+\end{proof}

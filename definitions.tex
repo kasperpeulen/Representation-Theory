@@ -1,0 +1,173 @@
+\section{Definitions and Theorems}
+
+\begin{defn}
+An \emph{algebra} over \(k\) is a vector space \(A\neq 0\) over \(k\) with a bilinear map
+
+\[A \times  A\rightarrow A: (a,b) \rightarrow ab\]
+
+such that \begin{align*}\forall a,b,c\in A && (ab)c=a(bc) \\
+\exists 1\in A && 1a=a1=1\end{align*}
+
+An algebra is \emph{commutative} if \(ab=ba\) for all \(a,b\in A\).
+\end{defn}
+
+\begin{defn}
+A \emph{homomorphism of algebras} \(f:A\rightarrow B\) is a linear map such that 
+\begin{align*}f(x\overset{A}{\cdot } y)=f(x)\overset{B}{\cdot } f(y) &&\forall x,y\in A\end{align*}
+
+\end{defn}
+
+\begin{defn}
+A \emph{representation} of an algebra \(A\) (also called a \emph{left A-module}) is a vector space \(V\) together with a homomorphism of algebras 
+$$\rho  : A \rightarrow \text{End}V$$
+\end{defn}
+
+\begin{defn}
+A \emph{subrepresentation} of a representation \(V\) of an algebra \(A\) is a subspace \(W\subseteq V\) which is invariant under all the operators: 
+\begin{align*}\rho (a):V \rightarrow V && \forall a\in A\end{align*}
+In other notation: \(aW\subseteq W\) for any \(a\in A.\)
+\end{defn}
+
+\begin{defn}
+Let \(V_{1},V_{2}\) be two representations of an algebra \(A\). A \emph{homomorphism of representations} (or \emph{interwining operator}) \(\phi :V_{1}\rightarrow V_{2}\) is a linear operator such that:
+\begin{align*}\phi (av)=a\varphi (v) &&\forall v\in V,\forall a\in A\end{align*}
+
+A homomorphism of representations \(\phi \) is said to be an \emph{isomorphism of representations} if it is an isomorphism of vector spaces. 
+
+The set (space) of all homomorphisms of representations \(V_{1}\rightarrow V_{2}\) is denoted by \(\text{Hom}_{A} (V_{1},V_{2})\). This set forms a \(k\)-vector space. 
+\end{defn}
+
+\begin{defn}
+Let \(V_{1},V_{2}\) be representations of algebra \(A\). Then the space \(V=V_{1}\oplus V_{2}\) has an obvious structure of a representation of \(A\) given by
+$$a\underset{V}{.}(v_{1}\oplus v_{2}):=a\underset{V_{1}}{.}v_{1}\oplus a\underset{V_{2}}{.}v_{2}$$
+This representation is called the \emph{direct sum} of \(V_{1}\) and \(V_{2}\).
+\end{defn}
+
+\begin{defn}
+A non-zero representation \(V\) of an algebra \(A\) is said to be \emph{indecomposable} if it is not isomorphic to a direct sum of two nonzero representations.
+\end{defn}
+
+\begin{thm}
+ Let \(V_{1},V_{2}\) be representations of an algebra \(A\) over any field \(F\). Let \(\phi :V_{1}\rightarrow V_{2}\) be a nonzero homomorphism of representations. Then:   
+
+\begin{gather*}V_{1} \text{ irr. } \Longrightarrow  \phi  \text{ is injective} \\
+ V_{2} \text{ irr. } \Longrightarrow  \phi  \text{ is surjective}\end{gather*}
+
+So, if both \(V_{1},V_{2}\) are irr., then \(\phi \) is an isomorphism.
+\end{thm}
+
+\begin{thm}
+Let \(V\) be a finite dimensional irr. representation of an algebra \(A\) over an algebraically closed field \(k\), and let 
+$$\phi :V\rightarrow V$$
+be a homomorphism of representations. Then \(\phi =\lambda \cdot \text{Id}\) for some \(\lambda \in k\).
+\end{thm}
+
+\begin{thm}
+Let \(A\) be a commutative algebra. Then every irr. finite dimensional representation \(V\) of \(A\) is 1-dimensional. Note that every 1-dimensional representation of an algebra is automatically irreducible.
+\end{thm}
+
+\begin{thm}
+Every nonzero finite dimensional representation of an algebra \(A\) has an irreducibule subrepresentation.
+\end{thm}
+
+\begin{thm}
+By \(\text{End}_{A} (V)\) one denote the algebra of all homomorphisms of representations \(V\rightarrow V\). Show that \(\text{End}_{A} (A)=A^{\text{op}}\), the algebra \(A\) with opposite multiplication.
+\end{thm}
+
+\begin{defn}
+A \emph{left-ideal} of an algebra  is a subspace \(I\subseteq A\) such that 
+
+\begin{align*}aI\subseteq I && \forall a\in A\end{align*}
+
+A \emph{right-ideal} of an algebra \(A\) is a subspace \(I\subseteq A\) such that 
+
+\begin{align*}Ia\subseteq I && \forall a\in A\end{align*}
+
+A \emph{two-sided ideal} is a subspace that is both a left ideal and a right ideal.
+\end{defn}
+
+\begin{thm}
+Left ideals are the same as subrepresentations of the regular representation of \(A\). Right ideals are the same as subrepresentations of the regular representation of the opposite algebra \(A^{\text{op}}\).
+\end{thm}
+
+\begin{defn}
+An algebra \(A\) is called \emph{simple} if \(0\) and \(A\) are its only two sided ideals.
+\end{defn}
+
+\begin{thm}
+If \(\phi :A\rightarrow B\) is a homomorphism of algebras, then \(\text{Ker} \phi \) is a two-sided ideal of \(A\).
+\end{thm}
+
+\begin{defn}
+If \(S\) is any subset of an algebra \(A\), then the two-sided ideal \emph{generated} by \(S\) is denoted by \(\langle S\rangle \) which is defined as 
+
+\begin{align*}\langle S\rangle :=\text{span}\{asb\} &&a,b\in A,s\in S.\end{align*}
+
+Similarly, we can define
+
+\begin{align*}&\langle S\rangle _{l} =\text{span}\{as\} &&a\in A,s\in S \\
+&\langle S\rangle _{r} =\text{span}\{sb\} &&b\in A,s\in S\end{align*}
+
+the left, respectively, right, ideal generated by \(S\).
+\end{defn}
+
+\begin{defn}
+A \emph{maximal} ideal of a ring \(A\) is an ideal \(I\neq A\) such that any strictly larger ideal coincides with \(A\).
+\end{defn}
+
+\begin{defn}
+Let \(A\) be an algebra and let \(I\) be a two-sided ideal in \(A\). Then \(A/I\) is the set of (additive) cosets of \(I\). Let 
+$$\pi :A \rightarrow A/I : a \mapsto  a+I$$
+be the quotient map. We can define multiplication in \(A/I\) by 
+$$\pi (a)\cdot \pi (b)= \pi (a\underset{A}{\cdot }b).$$
+This makes \(A/I\) an algebra.
+\end{defn}
+
+\begin{thm}
+If \(V\) is an representation of \(A\) and \(W\subseteq V\) is a subrepresentation, then \(V/W\) is also a representation.
+\end{thm}
+
+\begin{thm}
+If $I$ is a left ideal in \(A\), then $A/I$ is a representation of $A$.
+\end{thm}
+
+\begin{defn}
+Let $V\neq 0$ be a representation of $A$. We say that a vector $v\in V$ is \emph{cyclic} if it generates $V$. In other words, $Av=V$. A representation that contains a cyclic vector is said to be \emph{cylic}.
+\end{defn}
+
+\begin{thm}
+$V$ is irr. if and only if all nonzero vectors of $V$ are cyclic
+\end{thm}
+
+\begin{thm}
+$V$ is cyclic if and only if it is isomorphic to $A/I$, where $I$ is a left ideal in $A$.
+\end{thm}
+
+\begin{defn}
+If $f_{1},...,f_{m}$ are elements of the free algebra $k\langle x_{1},\ldots ,x_{n}\rangle $ we say that the algebra $k\langle x_{1},...,x_{n}\rangle /\{f_{1},...,f_{m}\}$ is \emph{generated} by $x_{1},...,x_{n}$ with \emph{defining relations} $f_{1}=0,...,f_{m}=0$.
+\end{defn}
+
+\begin{thm}
+If \(\phi \in \Hom_A(V_{1},V_{2})\) then \(\Ker(\phi )\subseteq V_{1}\) and \(\Imm(\phi )\subseteq V_{2}\) are subrepresentations. If \(\Imm(\phi )=V_{2}\) and \(\Ker(\phi )=0\), then \(\phi \) is an isomorphism of representations. 
+\end{thm}
+
+\begin{thm}
+An representations homomorphism \(\phi :V_{1}\rightarrow V_{2}\) induces a isomorphism of representations 
+\[\bar{\phi } : V_{1}/\Ker(\phi ) \rightarrow  \Imm(\phi ).\]
+\end{thm}
+
+\begin{thm}
+If \(V_{1}\) and \(V_{2}\) are inequivalent irreducible representations, then \(\Hom_A(V_{1},V_{2})=0\).
+\end{thm}
+
+\begin{thm}
+If \(V\) is an irreducible representation of \(A\), then 
+\[D:=\End_{A} (V)\]
+is a division algebra over $k$.   
+
+If in addition \(k\) is algebraically closed, and \(V\) is finite dimensional, then
+\[\End_{A} (V) =k.\text{id}_{V.}\]
+\end{thm}
+
+
+

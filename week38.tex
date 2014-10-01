@@ -1,0 +1,62 @@
+\section{Week 38}
+
+\input{theory38}
+
+\subsection*{Homework}
+\begin{thm}
+Let \(V\neq 0\) be a representation of \(A\). Show that \(V\) is irreducible if and only if all nonzero vectors of \(V\) are cyclic.
+\end{thm}
+
+\begin{proof} [Proof of (\(\Longrightarrow\))]  Let \(v_{0}\) be a nonzero vector in \(V\). By \ref{5}, we need to show that \(Av_{0}\supseteq V\). Let \(v\in V\), we are going to show that \(\exists a\in A\) so that \(v=av_{0}\in Av_{0}\).
+
+Consider the map \(\phi  : A \rightarrow V : a \rightarrow a.v_{0}\). If we see \(A\) as the regular representation of \(A\), then this a homomorphism of representations:
+\[\phi (a.b)=\phi (ab)=(ab).v_{0}= a.(b.v_{0})=a.\phi (b).\]
+And we know from \ref{4} that the image of a homomorphism of representations is a subrepresentation of the codomain. In our case, the codomain is equal to \(V\), which is irreducible by hypothesis. So the image of \(\phi \) is either \(0\) or \(V\). The image can't be $0$ as, \(1.v_{0}=v_{0}\neq 0\), and therefore the image must be \(V\). So surely, there exists an \(a\in A\) such that \(av_{0}=v\). \end{proof}
+
+\begin{proof}[Proof of \((\Longleftarrow )\)] We need to show that \(V\) is irreducible. So take a subspace \(W\subset V\). And assume that \(W\neq 0\) or \(V\). We need to show that \(\exists a\in A\) and \(v_{0}\in W\) such that \(av_{0}\not\in W\).
+
+By hypothesis, we know that \(v_{0}\) is cyclic. And therefore \(Av_{0}=V\supset W\) which proofs exactly that: \(\exists a\in A : av_{0}\not\in W.\)
+\end{proof}
+
+\begin{thm}
+Let \(V\neq 0\) be a representation of \(A\). Show that \(V\) is cyclic if and only if it is isomorphic to \(A/I\) where \(I\) is a left-ideal in \(A\).
+\end{thm}
+
+\begin{proof}[Proof of $(\Longrightarrow )$] It follows from \ref{isomorphismtheorem} that we need to show that there exists a left-ideal \(I\) which is the kernel \(K\) of some surjective homomorphism of representations \(\phi :A\rightarrow V\). But the kernel of homomorphism of representations is always a subrepresentation of the domain by \ref{4}. So in this case, \(K\) is a  subrepresentation of the regular representation of \(A\). It follows from \ref{ideal_is_sub}, that K is a left-ideal. So we can reduce our problem to showing that there exists a surjective homomorphism \(\phi :A\rightarrow V\).
+
+By hypothesis, we have a cyclic vector \(v_{0}\in V\). Define now
+\[\phi :A\rightarrow V:a\mapsto a.v_{0}.\]
+As \(Av_{0}=V\), we have that \(\phi \) is surjective. And it is a homomorphism of representation as
+\[\phi (a\underset{A}{.}b)=\phi (a\underset{A}{\cdot }b)=(ab).v_{0}=a.(b.v_{0})=a.\phi (b).\]
+\end{proof}
+
+\begin{proof}[Proof of \((\Longleftarrow )\)] As \(I\) is a left ideal in \(A\), it is a subrepresentation of the regular representation of \(A\). And as both \(A\) and \(I\) are representations of \(A\), we have that \(A/I\) must be a representation of \(A\). We need to show that this representation is cyclic. Note that action of \(A\) on this representation \(A/I\) is defined as (see \ref{V/W_representation}):
+\[a.\bar{b}=\overline{ab}.\]
+We need to show that  that there exists a \(\overline{a_{0}}\in A/I\) such that \(A/I\subseteq A.\overline{a_{0}}\). So for any \(\bar{b}\in A/I\) there must exist an \(a\in A\) such that \(\bar{b}=\overline{aa_{0}}\). Well simply take \(a_{0}:=1\), and take \(a:=b\).
+\end{proof}
+
+
+\subsection*{Exercises}
+
+\begin{prop}
+Let \(A=k[x_{1},\ldots ,x_{n}]\) and let \(I\neq A\) be any ideal in \(A\) containing all homogeneous polynomials of degree \(\geq N\). Show that \(A/I\) is an indecomposable representation of \(A\).
+\end{prop}
+
+\begin{proof}
+
+To show that \(A/I\) is an indecomposable representation of \(A\), we need that if \(A/I=V_{1}\oplus V_{2}\) and \(V_{1}\neq 0\), then \(V_{1}=A/I\).
+
+Note that \(I\) contains all homogeneous polynomials of degree \(\geq N\), and so it contains also all monomials of degree \(\geq N\). And therefore the set of monomials of degree \(\leq N-1\) generates \(A/I\).  This means we can reduce our problem to showing that all monomials of degree \(\leq N-1\) are contained in \(V_{1}\).
+
+We are going to show that \(V_{1}\) or \(V_{2}\) must contain a polynomial \(p\) such that the constant term is not \(0\). As \(I\neq A\), we know that \(1\in I\), which means that \(\bar{0}\neq \bar{1}\in A/I\). And therefore \(\bar{1}\in V_{1}\oplus V_{2}\). But if \(V_{1},V_{2}\) only contained polynomials with zero constant term, then the direct sum \(v_{1}\oplus v_{2}\) would also have a zero constant term, and so \(v_{1}\oplus v_{2}\neq \bar{1}\). So \(V_{1}\) or \(V_{2}\) must contain a polynomial \(p\) such that the constant term is not \(0\). WLOG, we assume that \(V_{1}\) contains this polynomial \(p\).
+
+We now finish our quest with induction. We can rewrite our problem as:
+
+\textbf{Show for all \(k\in \{1,...,N\}\) that all monomials \(m\) of degrees \(N-k\) up to \(N-1\) are contained in \(V_{1}\).}
+
+\begin{itemize}
+  \item \emph{Base case}: We are going to show that any monomial of degree \(N-1\) is contained in \(V_{1}\).Take any monomial \(m\) of degree \(N-1\). Then \(pm=p_{0}m\) where \(p_{0}\) is the nonzero constant term of \(p\). As \(V_{1}\) is \(A\)-invariant, we have that \(m\in V_{1}\).
+  \item \emph{Induction step}: We are going to show that all monomials of degree \(N-(k+1)\) are contained in \(V_{1}\). Let \(m\) such a monomial, then \(pm=p_{0}m\) + [terms of degree \(N-k\) up to \(N-1\)]. By induction hypothesis $pm\in V_{1}$, and as \(V_{1}\) is \(A\)-invariant, we have that \(m\in V_{1}\).
+\end{itemize}
+
+\end{proof}
