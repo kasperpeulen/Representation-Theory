@@ -1,0 +1,87 @@
+\section{Free algebras}
+\begin{defn}
+A \emph{free associative algebra} \(k\langle x_{1},\ldots ,x_{n}\rangle \) of \(n\) noncommuting variables \(x_{1},\ldots ,x_{n}\) is the algebra with as \(k\)-basis the set of words \(w=x_{i_{1}}\ldots x_{i_N}\) in the alphabet \(x_{1},\ldots ,x_{n}\) including the empty word, denoted by \(1\).
+
+Multiplication of these basis element is defined by the concatenation of words.
+\end{defn}
+
+\begin{defn}
+
+If \(f_{1},\ldots ,f_{m}\) are elements of the free algebra \(k\langle x_{1},\ldots ,x_{n}\rangle \), we say that the algebra
+\[k\langle x_{1},\ldots ,x_{n}\rangle /(f_{1},\ldots ,f_{m})\]
+is \emph{generated} by \(x_{1},\ldots ,x_{n}\) with defining relations \(f_{1}=0,\ldots ,f_{m}=0\).
+\end{defn}
+
+\begin{thm}
+Let \(V\) be a vector space, and let \(M_{i}\in \End_{k}(V)\) for \(i=1,\ldots ,n\). We can assign to a word \(w=x_{i_{1}}\cdots x_{i_N}\in k\langle x_{1},\ldots ,x_{n}\rangle \) the endomorphism
+\[M_{w}=M_{i_{1}}\cdots M_{i_N}\in \End_{k}(V).\]
+
+If we extend this linearly to \(k\langle x_{1},\ldots ,x_{n}\rangle \), we obtain a representation \(\rho =\rho _{M_{1},\ldots ,M_{n}}\) of \(k\langle x_{1},\ldots ,x_{n}\rangle \) on \(V\).
+\end{thm}
+
+\begin{proof}
+We need to show prove that \(\rho :k\langle x_{1},\ldots ,x_{n}\rangle \rightarrow \End_{k}(V)\) is a homomorphism. Showing that is equivalent with:
+\begin{align*}\rho (w_{1})\rho (w_{2})&=\rho (w_{1}w_{2}) && \forall w_{1},w_{2}\in \mathcal{B}. \\
+&\Updownarrow  \\
+M_{w_{1}}M_{w_{2}}&=M_{w_{1}w_{2}} && \forall w_{1},w_{2}\in \mathcal{B}
+\end{align*}
+
+That this last statement is true follows directly from the definition of \(M_{w}\).
+\end{proof}
+
+\begin{thm}
+Conversely, and representation of \(k\langle x_{1},\ldots ,x_{n}\rangle \) on \(V\) is of this form. There exists a natural bijection between the set of reprsentations of \(k\langle x_{1},\ldots ,x_{n}\rangle \) on \(V\) and the set of ordered \(n\) tuples of endormorphisms \((M_{1},\ldots ,M_{n})\) on \(V\).
+\end{thm}
+
+\begin{thm}
+Let \(B\) be a finitely generated algebra, with generators \(y_{1},\ldots ,y_{n}\). Then there exists a unique surjective algebra homomorphism \(\phi :k\langle x_{1},\ldots ,x_{n}\rangle \rightarrow B\) such that \(\phi (x_{i})=y_{i}\). Assume that the two-sided ideal \(\Ker\phi \) is finitely generated, \(\Ker \phi =(f_{1},\ldots ,f_{n})\). Then
+\[\bar{\phi }: k\langle x_{1},\ldots ,x_{n}\rangle  / (f_{1},\ldots ,f_{N} )\rightarrow B\]
+is an isomorphism of algebras. We say that \(B\) has a presentation with finitely many generators and relations, or simply a finite presentation.
+
+In this case, amy representation of \(B\) on \(V\) lifts to a representation of \(A\), and hence determines an \(n\)-tuple of endomorphisms \((M_{1},\ldots ,M_{n})\) of \(V\).
+
+\end{thm}
+
+\begin{thm}
+The representation of \(k\langle x_{1},\ldots ,x_{n}\rangle  \) defined by an \(n\)-tuple of endomorphisms \((M_{1},\ldots ,M_{n})\) of \(V\) descends to \(B\) if and only if \(f_{i}(M_{1},\ldots ,M_{n})=0\) for all \(i=1,\ldots ,N\).
+\end{thm}
+
+\newpage
+
+\section{Path algebras}
+
+\begin{defn}
+A \emph{quiver} \(Q=(I,E)\) is a finite directed graph, possibly with self loops and multiple edges. Here \(I\) denotes the set of vertices, and \(E\) the set of edges.
+
+These sets come equipped with maps \(h:E\rightarrow I\) (head) and \(t:E\rightarrow I\) (tail). Given \(e\in E\), we write \(e':=t(e)\in I\) and \(e'':=h(e)\in I\).
+
+\end{defn}
+
+\begin{defn}
+The \emph{\(n\)-loop quiver} \(Q_{L,n}\) is the quiver with one vertex \(v\) and \(n\) edges \(e_{1},\ldots ,e_{n}\).
+\end{defn}
+
+\begin{defn}
+The Dynkin quiver \(Q(A_{n})\) of type \(A_{n}\) is the quiver with \(n\)vertices \(v_{1},\ldots ,v_{n}\) and \(n-1\) edges \(e_{1,2},e_{2,3},\ldots ,e_{n-1,n}\) such that
+\begin{gather*}t(e_{i,i+1})=v_{i+1} \\
+h(e_{i,i+1}) =v_{i}\end{gather*}
+
+\end{defn}
+
+\begin{defn}
+A representation \(\mathcal{V}\) of a quiver \(Q=(I,E)\) consists of a \(k\)-vector space \(V_{i}\) for every \(i\in I\), and a \(k\)-linear map \(x_{h}: V_{h'}\rightarrow V_{h''}\) for every \(h\in E\).
+\end{defn}
+
+
+\begin{defn}
+Let \(\mathcal{V}=(V_{i},x_{h})\) and \(\mathcal{W}=(W_{i},y_{h})\) be representations of the quiver \(Q\). A homomorphism \(\phi : \mathcal{V}\rightarrow \mathcal{W}\) of quiver representations consist of a collection of \(k\)-linear maps \(\phi _{i}:V_{i}\rightarrow W_{i}\) such that for all \(h\in E\):
+\[y_{h}=\varphi _{h'}=\varphi _{h''} \circ  x_{h}\]
+
+\end{defn}
+
+\begin{defn}
+
+The \emph{path algebra} \(P_{Q}\) of a quiver \(Q\) over a field \(k\) is the \(k\)-vector space with basis consisting of the oriented paths in \(Q\), including, for each \(i\in I\), the trivial path \(p_{i}\). The multiplication of basis elements in \(P_{Q}\) is defined by concatenation of paths if the paths are compasable, i.e. if path $a$ starts in the end point of path \(b\). In this case we defined \(ab\) to be the path where we first traverse \(b\) and then \(a\). If \(a\) and \(b\) are not composable, then we define \(ab=0\). We extend this bilinearly. This defines an associative \(k\)-algebra \(P_{Q}\) with unit $1=\sum _{i=1}p_{i}$.
+
+\end{defn}
+

@@ -20,8 +20,8 @@
 \usepackage{hyperref}
 
 
-\swapnumbers
-\newtheoremstyle{break}% name
+
+\newtheoremstyle{theorem}% name
   {}%         Space above, empty = `usual value'
   {}%         Space below
   {\itshape}% Body font
@@ -29,8 +29,16 @@
   {\bfseries}% Thm head font
   {.}%        Punctuation after thm head
   {\newline}% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
+     {\def\temp{#3}\ifx\temp\empty\thmnumber{#2 }\thmname{#1}\else\thmnumber{#2}\thmnote{ #3}\fi}%         Head spec
 
+%         Thm head spec
+\theoremstyle{theorem}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+\swapnumbers
 \newtheoremstyle{definition}% name
   {}%         Space above, empty = `usual value'
   {}%         Space below
@@ -41,30 +49,33 @@
   {\newline}% Space after thm head: \newline = linebreak
   {}%         Thm head spec
 
-
-\theoremstyle{break}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{cor}[thm]{Corollary}
-
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{example}[thm]{Example}
 \theoremstyle{remark}
 \newtheorem{remark}[thm]{Remark}
 
-\usepackage{etoolbox}
 \usepackage{parskip}
 
 \makeatletter
 \renewenvironment{proof}[1][\proofname] {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\mbox{}\\*}{\popQED\endtrivlist\@endpefalse}
 \makeatother
 
+%Fix if theorem starts with a list
+\makeatletter
+\def\itemfix{%
+\if@inlabel
+ \noindent \par\nobreak\vskip-\baselineskip\hrule\@height\z@
+\fi}
+
+\let\olditemize\itemize
+\def\itemize{\itemfix\olditemize}
+\makeatother
+
 \makeatletter
 \def\enumfix{%
 \if@inlabel
- \noindent \par\nobreak\vskip-\parskip\vskip-\parskip\hrule\@height\z@
+ \noindent \par\nobreak\vskip-\baselineskip\hrule\@height\z@
 \fi}
 \let\oldenumerate\enumerate
 \def\enumerate{\enumfix\oldenumerate}
@@ -76,10 +87,11 @@
 %\tableofcontents
 %\clearpage
 
-\include{week37}
-\include{week38}
-\include{week39}
+%\include{week37}
+%\include{week38}
+%\include{week39}
 %\include{definitions}
+\include{extra}
 
 %\printindex
 
