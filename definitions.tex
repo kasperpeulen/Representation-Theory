@@ -47,6 +47,20 @@ This representation is called the \emph{direct sum} of \(V_{1}\) and \(V_{2}\).
 A non-zero representation \(V\) of an algebra \(A\) is said to be \emph{indecomposable} if it is not isomorphic to a direct sum of two nonzero representations.
 \end{defn}
 
+\begin{prop}
+An irreducible representation \(V\) is indecomposable.
+\end{prop}
+
+\begin{proof}
+To show that \(V\) is indecomposable. Assume that $V=V_{1}\oplus V_{2}$. We can view \(V_{1},V_{2}\) as subspaces of \(V\) such that $V_{1}\cap V_{2}=\{0\}$. We are need to show that either \(V_{1}\) or \(V_{2}\) is zero.
+
+As $V$ is irreducible, any subrepresentation must be either $0$ or \(V\). And as $V_{1}\cap V_{2}=\{0\}$, we have that either \(V_{1}\) or \(V_{2}\) is zero, if we can show that $V_{1},V_{2}$ are subrepresenations of $V$.
+
+To show that $V_{1},V_{2}$ are subrepresentations, we want that for any \(a\in A,v_{1}\in V_{1},v_{2}\in V_{2}\) we have \(a.v_{1}\in V_{1},a.v_{2}\in V_{2}\). This follows from the definition of the action of \(A\) on a direct sum of representations:
+
+\[A\times(V_{1}\oplus V_{2}) \rightarrow  V_{1}\oplus V_{2} \qquad  a.(v_{1}\oplus v_{2}):=a.v_{1}\oplus a.v_{2}\]
+\end{proof}
+
 \begin{thm}
  Let \(V_{1},V_{2}\) be representations of an algebra \(A\) over any field \(F\). Let \(\phi :V_{1}\rightarrow V_{2}\) be a nonzero homomorphism of representations. Then:   
 
