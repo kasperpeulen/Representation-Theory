@@ -12,34 +12,61 @@ By \(\End_{A} (V)\) one denotes the algebra of all homomorphisms of representati
 Let \(A\) be an associative algebra, and let \(V\) be a representation of \(A\). Show that \(\End_{A} (A)= A^{\text{op}}\), the algebra with opposite multiplication.
 \end{thm}
 
-\begin{proof} To show that \(\End_{A} (A) \cong  A^{\op}\), we have to find an isomorphism of algebras:
-\[f :A^{\op} \rightarrow  \End_{A} (A) \]
-To make things clear, we denote by \(\cdot \) the multiplication in \(A\) and by \(\underset{\op}{\cdot }\) the multiplication in \(A^{\op}\). Elements of \(\End_{A} (A)\) are homomorphisms of representations \(\phi : A\rightarrow A\) where \(A\) is the regular representation of the algebra \(A\). We will denote \(\circ \) by multiplication in \(\End_{A} (A)\). 
+\begin{proof}
+Showing that \(\End_{A} (A) \cong  A^{\op}\), is equivalent with showing that there exists an isomorphism of algebras:
+\[
+f :A^{\op} \rightarrow  \End_{A} (A) 
+\]
+To make things clear, we denote by \(\cdot \) the multiplication in \(A\) and by \(\underset{\op}{\cdot }\) the multiplication in \(A^{\op}\). Elements of \(\End_{A} (A)\) are homomorphisms of representations \(\phi : A\rightarrow A\) where \(A\) is the regular representation of the algebra \(A\). We will denote \(\circ \) by multiplication in \(\End_{A} (A)\).
 
-We have to construct \(f\) such that the following three hold:
+We are going to construct an isomorphism of algebras \(f\), which means that our \(f\) must satsify:
 
 \begin{enumerate}
-\item \(f(a\underset{\op}{\cdot }b)=f(a) \circ f(b)\)
-\item \(f\) must be surjective
-\item \(f\) must be injective
+  \item \(f(a\underset{\op}{\cdot }b)=f(a) \circ f(b)\)
+  \item \(f\) is surjective
+  \item \(f\) is injective
 \end{enumerate}
 
 Showing that  \(f(a\underset{\op}{\cdot }b)=f(a) \circ f(b)\) is equivalent with showing that
-\begin{align*}\phi _{b\cdot a} (c) =\phi _{a}\circ \phi _{b}(c) && \forall c \in  A.\end{align*}
+\begin{align*}
+\phi _{b\cdot a} (c) =\phi _{a}\circ \phi _{b}(c) && \forall c \in  A.
+\end{align*}
 where \(\phi _{a}(b): = f(a)(b)\).
 
-It seems logical to define \(\phi_a(b) = b\cdot a\). As (1) hold then. In other notations define:
+It seems logical to define \(\phi _{a}(b): = b\cdot a\). As (1) hold then. In other notations define:
+\[
+f :A^{\op} \rightarrow  \End_{A} (A) : a \mapsto \big(\phi _{a} : A \rightarrow  A:b \mapsto b\cdot a\big)
+\]
 
-\[f :A^{\op} \rightarrow  \End_{A} (A) : a \mapsto \big(\phi _{a} : A \rightarrow  A:b \mapsto b\cdot a\big)\]
-
-Let's check if \(f\), defined this way, is surjective. Take an element \(\phi \in  \End_{A} (A)\). We know that \(a.\phi (b)=\phi (a.b)\), therefore:
-
-\[\phi (a)=\phi (a.1)=a.\phi (1)\]
-
-We need to show there exists an element \(a\) in \(A^{\op}\) such that \(f(a)=\phi\). Choose \(a\) to be \(\phi(1)\), and note that:
-\begin{align*} f(\phi(1))(b) = b.\phi(1) = \phi(b) && \forall b \in A \end{align*}
-
-For injectivity, suppose that \(f(b)=f(c)\). Let \(a\in A-0\), then \(f(b)(a)=f(c)(a)\), which implies that \(a.b=a.c\). And this implies that $b=c$.
+Showing that \(f\), defined this way, is surjective, is equivalent with assuming \(\phi \in \End_{A} (A)\) and showing that,
+\[
+\exists a\in A^{\op}\space : \space \phi =f(a),
+\]
+which in turn is equivalent with showing that
+\begin{align*}
+\exists a\in A^{\op}\space : \space \phi (b)=f(a)(b) \qquad \forall b\in B,
+\end{align*}
+and this is equivalent with:
+\begin{align*}
+\exists a\in A^{\op}\space : \space \phi (b)=b\cdot a \qquad \forall b\in B
+\end{align*}
+As \(\phi \in \End_{A} (A)\), we have
+\begin{align*}
+\phi (b.a)=b.\phi (a) \qquad \forall a,b\in A
+\end{align*}
+and therefore
+\begin{align*}
+\phi (b)=\phi (b.1)=b.\phi (1) \qquad \forall b\in A
+\end{align*}
+Choose \(a:=\phi (1)\), and we have exactly what we wanted:
+\begin{align*}
+\exists a\in A^{\op}\space : \space \phi (b)=b\cdot a \qquad \forall b\in B
+\end{align*}
+Showing that \(f\) is injective, is equivalent with assuming that \(b,c\in A^{\op}\) and showing that:
+\begin{align*}
+f(b)=f(c) \quad \Longrightarrow  \quad b=c
+\end{align*}
+Suppose that \(f(b)=f(c)\). Let \(a\in A-0\), then \(f(b)(a)=f(c)(a)\), which implies that \(a\cdot b=a\cdot c\). And this implies that $b=c$.
 \end{proof}
 
 \subsection*{Exercises}

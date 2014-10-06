@@ -733,3 +733,281 @@ To show that \(\phi \) is invertible, note that \((\phi _{i,j})\) is diagonal, a
 \end{proof}
 
 
+\begin{defn}
+Let \(U\) be a subrepresenation of \(V\), a \emph{complement} \(W\) of \(V\) is a subrepresentation such that \(V=U\oplus W\).
+\end{defn}
+
+\begin{prop}
+Let \(A\) be a \(k\)-algebra, and let \(V\) be a finite dimensional (over \(k\)) \(A\)-module. The following are equivalent:
+
+\begin{enumerate}
+  \item \(V\) is a sum of irreducible submodules
+  \item \(V\) is semisimple
+  \item Every submodule \(U\subseteq V\) admits a complement.
+\end{enumerate}
+\end{prop}
+
+
+\begin{proof}
+[Proof of \(1\Rightarrow 2\)] Showing that \(V\) is semisimple, is equivalent with showing that there exist a \textbf{direct} sum of irreducible submodules equal to \(V\).
+
+By hypothesis, we already have a sum \(\sum _{i\in I}V_{i}\) of irreducible submodules equal to \(V\). As \(V\) is finite, we can choose a finite subset of submodules \(V_{i}\) such that \(\sum _{i=1}^nV_{i}=V\). We can reduce our problem now to showing that \(V_{i}\cap V_{j}=0\) for \(i\neq j\).
+
+Assume that there would exist an element
+\[
+v\in V: v\in V_{i}\wedge v\in V_{j}.
+\]
+Then \(V_{i}=Av=V_{j}\). So \(V_{i}=V_{j}\).<br />
+\end{proof}
+
+\begin{proof}
+[Proof of \(2 \Rightarrow 3\)] To show that every submodule \(U\subseteq V\) admits a complement, it suffices to assume that \(U\) is a submodule and show that there exists a submodule \(W\) such that \(V=U\oplus W\).
+
+By hypothesis, we have a direct sum of irreducible submodules
+\[
+V=\bigoplus_{i=1}^nV_{i}.
+\]
+Let \(S_J:=U+\bigoplus_{i=1}^kV_{i}\) where $k$ is the maximal number such that $S_J$ is a direct sum. For any \(i : k<i\leq n\) we have that \(V_{i}\subseteq S_J\), since otherwise \(V_{i}\cap S_J=0\), contradicting the choice of $k$.
+\end{proof}
+
+\begin{proof}[Proof of \(3\Rightarrow 2\)] 
+We are going to show that every \(A\)-module \(V\) with \(\dim(V)\leq k\), is a sum of irreducible submodules, by induction on \(k\).
+
+\begin{itemize}
+  \item \textbf{Basis case}: If \(k=1\), then \(V\) is irreducible, and \(V\) is a submodule of itself.
+  \item \textbf{Induction step}: To show that every \(A\)-module \(V\) of $\dim(V)=k+1$ is a sum of irreducible submodules.
+Take \(U\subseteq V\) a proper submodule. By hypothesis (3), we have that \(V=U\oplus W\). By induction hypothesis, we have that \(U,W\) are sums of irreducible submodules. And therefore \(V\) is a sum of irreducible submodules as well.
+\end{itemize}
+\end{proof}
+
+\begin{prop}
+Let \(V\) be a finite dimensional semisimple \(A\) module, and let \(U\subseteq V\) be a submodule. Then \(U\) and \(V/U\) are also semisimple.
+\end{prop}
+
+\begin{proof}
+Showing that \(U\) is semisimple, is equivalent with showing that any submodule \(U'\subseteq U\) admits a complement \(W'\subseteq U\).
+
+By hypothesis, we have that \(V\) is semisimple, and so \(U'\) as submodule of \(V\) has an complement \(W\subseteq V\). Define now \(W'=U\cap W\). We need to show that :
+
+\begin{enumerate}
+  \item \(U'\cap W' =0\)
+  \item \(W'\) is a submodule of \(U\)
+  \item \(U'+W'=U\)
+\end{enumerate}
+
+We will proof it one at a time:
+
+\begin{enumerate}
+  \item \(U'\cap W'=U'\cap (U\cap W)=U'\cap W=0\)
+  \item Showing that \(W'\) is a submodule of \(U\), is equiv. with showing that,
+\begin{align*}
+a.W'\subseteq W' && \forall a\in A,
+\end{align*}
+so it suffices to assume \(a\in A\) and \(w'\in W'\) and show that
+\[
+a.w'\in W',
+\]
+showing that is equivalent with assuming that \(w'\in U\) and \(w'\in W\) and showing that
+\[
+a.w'\in U \wedge  a.w'\in W.
+\]
+This holds as \(U\) and \(W\) are both \(A\)-submodules.
+  \item To show that \(U'+W'=U\), it suffices to show that \(U'+W'\supseteq  U\), to show that it suffices to assume \(u\in U\) and show that there exists \(u'\in U'\) and \(w\in W'\) such that \(u=u'+w'\).  <p>
+We have that \(U'+W=V\) and as any \(U\subseteq V\), we have that \(u=u'+w\) for some \(w\in W\). And so \(w\) also has to be in $U$, and therefore in $W'=U\cap W$.
+\end{enumerate}
+
+\end{proof}
+
+\begin{prop}
+Let \(V\) be a finite dimensional semisimple \(A\) module, and let \(U\subseteq V\) be a submodule. Then \(U\) and \(V/U\) are also semisimple.
+\end{prop}
+
+\begin{proof}
+To show that \(V/U\) is semisimple, it suffices to show that there exists a complement of \(V/U\).
+
+As \(U\) is semisimple, it has a complement \(W\), so that
+\[
+V/U=(U\oplus W)/U \cong W.
+\]
+Therefore \(V/U\) has \(U\) as a complement.
+\end{proof}
+
+\begin{prop}[Exercise 5 (Week 39)]
+Let \(U\) be a submodule of a finite dimensional \(A\)-module. If \(U\) and \(V/U\) are semisimple, show that \(V\) is semisimple.
+\end{prop}
+
+\begin{proof}
+Showing that \(V\) is semisimple, is equivalent with showing that \(V\) is the sum of irreducible submodules.
+
+If \(U\) is semisimple, it has a complement \(W\), and we have:
+\[
+V/U=(U\oplus W)/U \cong W
+\]
+As both \(U\) and \(W\) are now semisimple, we have that \(U\) and \(W\) are sums of irreducible submodules. And therefore \(V\) is also a sum of irreducible submodules.
+\end{proof}
+
+\begin{defn}
+Let \(k\) be a field. A finite dimensional \(k\)-algebra \(A\) is called semisimple if all its finite dimensional representations are semisimple.
+\end{defn}
+
+\begin{prop}
+A finite dimensional \(k\)-algebra \(A\) is semisimple if and only if the left regular representation \((A,\rho )\) of \(A\) is semisimple.
+\end{prop}
+
+\begin{proof}
+[Proof of \(\Longrightarrow \)] If \(A\) is semisimple, then \textbf{all} its finite dimensional representations are semi-simple. And as \(A\) is finite-dimensional, the regular representation is finite dimensional, and so \((A,\rho )\) is indeed semisimple.
+\end{proof}
+
+\begin{proof}
+[Proof of \(\Longleftarrow \)] To show that \(A\) is semisimple, it suffices to assume that \(V\) is a finite dimensional represenation and show that it is semisimple.
+
+We can choose a finite subset \(B\subseteq V\) such that \(V=AB\). Why ?
+\end{proof}
+
+
+\begin{prop}
+Let \(A''=\End_{A'}(V)=\End_{\End_{A}(V)}(V)\) be the centralizer algebra of centralizer module \(_{A'}V\). Then \(A''\) is a \(k\)-algebra.
+\end{prop}
+
+\begin{proof}
+Showing that \(A''\) is a \(k\)-algebra, is equivalent with showing that there exists a ring homomorphism
+\[
+f: k\rightarrow Z(A'')=Z(\End_{A'}(V)).
+\]
+
+Define
+\[
+f:k\rightarrow Z(A'')=Z(\End_{A'}(V)) : \alpha  \rightarrow  \alpha \underset{A}{.}I\underset{A'}{.}I',
+\]
+
+where \(I'\) is the unit of \(\End_{A'}(V)\).
+
+Showing that \(\alpha .I.I'\in Z(\End_{A'}(V))\), is equivalent with showing that
+\begin{align*}
+\alpha .I.I'\circ L = L\circ \alpha .I.I' &&\forall L\in \End_{A'}(V),
+\end{align*}
+which is equivalent with assuming that \(L\in \End_{A'}(V)\) and showing that
+\begin{align*}
+\alpha .I.I'\circ L(v) = L\circ \alpha .I.I'(v) &&\forall v\in V.
+\end{align*}
+Which holds as \((\alpha .I).L(v)=L((\alpha .I).v)\).
+
+We have a ringhomomorphism as:
+\begin{gather*}
+f(\alpha +\beta )=(\alpha +\beta ).I.I'=\alpha .I.I'+\beta .I.I'=f(\alpha )+f(\beta ) \\
+f(\alpha \cdot \beta )=(\alpha \cdot \beta ).I.I'=\alpha .I.I'\cdot \beta .I.I'=f(\alpha )\cdot f(\beta ) 
+\end{gather*}
+\end{proof}
+
+\newpage
+\begin{prop}
+Show that \(V\) is an \(A''\)-module.
+\end{prop}
+
+\begin{proof}
+To show that \(V\) is an \(A''\)-module, it suffices to show that there exist a homomorphism of algebras:
+\[
+\rho '' : A'' \rightarrow  \End_{k}(V)
+\]
+
+Note that any element \(\phi \in A''\) is an homomorphism of representations:
+\[
+\phi : {_{A'}}V\rightarrow  {_{A'}}V
+\]
+
+Which is a linear opeartor such that:
+\begin{align*}
+\phi (a'.v)=a'.\phi (v) &&a'\in \End_A(V)
+\end{align*}
+But is this \(\phi \) also a \(k\)-linear operator ? Which means that
+\begin{align*}
+\phi (\alpha v)=\alpha \phi (v) &&\forall \alpha \in k
+\end{align*}
+This does hold, as the operator \(\alpha .I\in \End_A(V)\) does act the same was \(\alpha \in k\) does.
+In other words we may just use the mapping:
+\[
+\rho '' : A'' \rightarrow  \End_{k}(V): \phi  \mapsto \phi .
+\]
+\end{proof}
+
+
+\begin{prop}
+Show that \(\rho (A)\subseteq A''\).
+\end{prop}
+
+\begin{proof}
+Let \(\phi \in \rho (A)\). Then \(\phi =\rho (a)\) for some \(a\in A\).
+
+To show that \(\phi \in A''\), we need to show that:
+\begin{align*}
+\phi (a'.v)=a'.\phi (v) &&\forall a'\in \End_A(V), \forall v\in V.
+\end{align*}
+Note that the action of \(A'\) on \(V\) is defined as \(a'.v=a'(v)\), so we need to show that:
+\begin{align*}
+\phi (a'(v))=a'(\phi (v)) &&\forall a'\in \End_A(V), \forall v\in V.
+\end{align*}
+This holds as for \(a'\in \End_A(V)\) we have that:
+\begin{align*}
+a'(\rho (a)(v))=\rho (a)(a'(v)) && \forall a\in A, \forall a\in V.
+\end{align*}
+\end{proof}
+
+\begin{defn}
+We say that \(_AV\) has the double centralizer property if \(\rho (A)=A''\).
+\end{defn}
+
+\begin{thm}
+Let \(V\) be a finite dimensional semisimple \(A\)-module. Then \(V\) has the DCP.
+\end{thm}
+
+\begin{prop}[Exercise 7 (Week 39)]
+Let \(V=k^{2}\) be a two dimensional \(k[x]\)-module such that
+\begin{align*}
+\rho (x)=\begin{pmatrix}0& 1 \\ 0 & 0\end{pmatrix}
+\end{align*}
+Does \(V\) satisfy DCP?
+\end{prop}
+
+\begin{proof}
+Showing that \(V\) doesn't satisfy DCP, is equivalent with showing that
+\[
+\End_{A'}(V) \not\subseteq \rho (A).
+\]
+It suffices to find a \(\phi \in \End_{k}(V)\) such that for any \(f\in k[x]\) we have:
+\[
+\phi \neq \rho (f)
+\]
+
+First note that
+\begin{align*}
+\rho (x^2)=\rho (x)\rho (x)=\begin{pmatrix}0 & 1 \\ 0 & 0\end{pmatrix}\begin{pmatrix}0 & 1 \\ 0 & 0\end{pmatrix} = 0.
+\end{align*}
+So if we choose \(\phi \neq 0\), we have that for any \(f\) of degree higher than 1:
+\[
+\phi  \neq  0 =\rho (f).
+\]
+Suppose \(\rho \) is of degree \(\leq 1\). Say that \(f=a+bx\). Then
+
+\begin{align*}
+\rho (a+bx)&=\rho (a)+\rho (bx)\\ 
+&=a\rho (1)+b\rho (1)\begin{pmatrix}0& 1 \\ 0 & 0\end{pmatrix}  \\
+&=aI+\begin{pmatrix}0& b \\ 0 & 0\end{pmatrix}  \ \\
+&= \begin{pmatrix}a& b \\ 0 & a\end{pmatrix}
+\end{align*}
+And we have that:
+\begin{align*}
+\rho (a+bx)(e_{1})&=ae_{1} \\
+\rho (a+bx)(e_{2}) &=ae_{1}+be_{2}
+\end{align*}
+For any \(\phi \in \End_{A'}(V)\) we have that:
+\begin{align*}
+\phi (f'(e_{1}))=f'(\phi (e_{1}))&& \forall f'\in \End_{k[x]}(V).
+\end{align*}
+Suppose that our \(\phi \) is of the form \(\rho (a+bx)\) and let \(f'(e_{1})=e_{2}\). Then we have:
+\[
+ae_{1}+be_{2}= \phi (e_{2})=\phi (f'(e_{1}))=f'(\phi (e_{1}))=f'(ae_{1})=af'(e_{1})=ae_{2}
+\]
+
+Which is only possible if \(a=0\) and \(a=b\). But then \(\phi =0\) and we had chosen \(\phi \) to be nonzero.
+\end{proof}
+
